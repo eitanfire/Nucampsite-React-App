@@ -16,10 +16,10 @@ const Footer = () => {
                             <Link to='/directory'>Directory</Link>
                         </li>
                         <li>
-                            <Link to='/contact'>Contact</Link>
+                            <Link to='/about'>About</Link>
                         </li>
                         <li>
-                            <Link to='/'>Home</Link>
+                            <Link to='/contact'>Contact</Link>
                         </li>
                     </ul>
                     </Col>
