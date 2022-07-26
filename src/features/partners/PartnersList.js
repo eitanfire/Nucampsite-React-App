@@ -17,6 +17,6 @@ const PartnersList = () => {
                 })}    
                 </Col>
                 );
-};
+            };
 
 export default PartnersList;
