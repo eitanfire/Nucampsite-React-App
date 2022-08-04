@@ -23,5 +23,5 @@ export const selectCampsiteById = (id) => (state) => {
 };
 
 export const selectFeaturedCampsite = (state) => {
-    return CAMPSITES.find((campsite) => campsite.featured);
+    return state.campsites.campsitesArray.find((campsite) => campsite.featured);
 };
