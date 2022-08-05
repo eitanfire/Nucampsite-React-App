@@ -3,7 +3,7 @@ export const validateCommentForm = (values) => {
 
     if (!values.rating) {
         errors.rating = 'Required'
-    } else if (values.author.length < 2) {
+    }  if (values.author.length < 2) {
         errors.author = 'Must be at least 2 characters.';
     } else if (values.author.length > 15) {
         errors.author = 'Must be 15 characters or less';
@@ -11,8 +11,8 @@ export const validateCommentForm = (values) => {
     return errors;
 }
 
-
-
+// you copy/pasted the contents of validateContactForm (presumably to use as a model for what you were doing here)
+//  but then you forgot to delete it. So there's an unused function that shouldn't be there.
 
 export const validateContactForm = (values) => {
     const errors = {}
