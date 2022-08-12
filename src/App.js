@@ -10,13 +10,15 @@ import Footer from './components/Footer';
 import CampsitesDirectoryPage from './pages/CampsitesDirectoryPage';
 import { fetchCampsites } from './features/campsites/campsitesSlice';
 import './App.css';
+import { fetchPartners } from  './features/partners/partnersSlice';
 
 function App() {
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(fetchCampsites());
-    });
+        dispatch(fetchPartners());
+    }, [dispatch]);
 
     return (
         <div className='App'>
