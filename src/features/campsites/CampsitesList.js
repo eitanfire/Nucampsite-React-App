@@ -2,11 +2,32 @@ import { useSelector } from 'react-redux';
 import { Col, Row } from 'reactstrap';
 import CampsiteCard from "./CampsiteCard";
 import { selectALLCampsites } from './campsitesSlice';
+import  Error  from '../../components/Error';
+import Loading from '../../components/Loading';
 
 const CampsitesList = () => {
     const campsites = useSelector(selectALLCampsites);
     console.log('campsites:', campsites);
+    
+    const isLoading = useSelector((state) => state.campsites.isLoading) ;
+    const errMsg = useSelector((state) => state.campsites.errMsg);
 
+    if (isLoading) {
+        return (
+            <Row>
+                <Loading />
+            </Row>
+        );
+    }
+
+    if (errMsg) {
+        return (
+            <Row>
+                <Error errMsg={errMsg} />
+            </Row>
+        );
+    }
+    
     return (
         <Row className='ms-auto'>
             {campsites.map((campsite) => {
